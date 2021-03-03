@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:project_test/MainScreens/homeScreen.dart';
+import 'package:splashscreen/splashscreen.dart';
+
+import 'Utils/AssetsImages.dart';
+import 'Utils/constants.dart';
 
 void main() {
   runApp(MyApp());
@@ -28,6 +33,17 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Center());
+    return SplashScreen(
+      seconds: Constants.TIME_SPLASH_SCREEN,
+      navigateAfterSeconds: HomeScreen(),
+      image: AssetsImages.ImageLogo(),
+      backgroundColor: Colors.black,
+      photoSize: 120,
+      loaderColor: Theme.of(context).primaryColor,
+      loadingText: Text(
+        Constants.TEXT_SPLASH,
+        style: TextStyle(color: Colors.white),
+      ),
+    );
   }
 }
