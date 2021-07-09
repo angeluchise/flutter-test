@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:project_test/MainScreens/homeScreen.dart';
+import 'package:project_test/MainScreens/login/welcomeScreen.dart';
+import 'package:project_test/Widgets/Desing/DesingAssets.dart';
 import 'package:splashscreen/splashscreen.dart';
 
 import 'Utils/AssetsImages.dart';
@@ -35,15 +36,15 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return SplashScreen(
       seconds: Constants.TIME_SPLASH_SCREEN,
-      navigateAfterSeconds: HomeScreen(),
+      navigateAfterSeconds: WelcomeScreen(),
       image: AssetsImages.ImageLogo(),
-      backgroundColor: Colors.black,
       photoSize: 120,
       loaderColor: Theme.of(context).primaryColor,
       loadingText: Text(
         Constants.TEXT_SPLASH,
         style: TextStyle(color: Colors.white),
       ),
+      gradientBackground: DesignAssets().linearGradientMain(context),
     );
   }
 }
